@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Upload') {
           steps {
-            sh "pwd"
+            echo "$HOME"
           }
         }
     }
