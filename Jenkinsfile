@@ -10,7 +10,7 @@ pipeline {
     }
   
    stage('Upload') {
-        sh pwd
+        sh "pwd"
         dir('C:\Users\asusn\.jenkins\workspace\angular1\dist\ang-app'){
             pwd(); //Log current directory
             withAWS(region:'us-east-2',credentials:'AWS_Credentials') {
