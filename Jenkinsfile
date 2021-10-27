@@ -7,10 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        
         stage('Upload') {
-          sh "pwd"
-        
+          steps {
+            sh "pwd"
+          }
         }
     }
 }
