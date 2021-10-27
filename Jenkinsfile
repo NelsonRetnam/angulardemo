@@ -9,7 +9,7 @@ pipeline {
         }
     }
   
-   stage('Upload') {
+    stage('Upload') {
         sh "pwd"
         
     }
