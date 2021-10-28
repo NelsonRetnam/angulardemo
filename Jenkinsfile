@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Upload') {
           steps {
-            sh "hostname"
+            echo env.PATH
           }
         }
     }
