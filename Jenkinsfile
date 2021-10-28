@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Upload') {
           steps {
-                bat "dir"
+                bat ''' ECHO Hello World  '''
           }
         }
     }
