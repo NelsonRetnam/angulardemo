@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Upload') {
           steps {
-            sh "pwd"
+            dir("C:\Program Files\Git\bin"){
+                sh "pwd"
+            }
           }
         }
     }
