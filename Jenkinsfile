@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Upload') {
           steps {
-            echo env.PATH
+            sh "pwd"
           }
         }
     }
