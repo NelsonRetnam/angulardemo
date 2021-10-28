@@ -3,7 +3,7 @@ pipeline {
   
   environment {
 
-    PATH = "C:\\WINDOWS\\SYSTEM32"
+    PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Program Files\\Git\\bin"
 
   }
     stages {
@@ -15,6 +15,7 @@ pipeline {
         stage('Upload') {
           steps {
                 bat ''' ECHO Hello World  '''
+                sh "pwd"
           }
         }
     }
