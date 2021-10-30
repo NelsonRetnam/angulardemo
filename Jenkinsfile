@@ -15,6 +15,7 @@ pipeline {
           steps {
                 sh 'pwd'
                 sh 'npm install'
+                sh 'npm install @angular/cli'
                 sh 'ng build --prod'
           }
         }
