@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Build') {
           steps {sh '''cd ${WORKSPACE}
+                      npm cache clear --force
                       npm install
                       npm run ng build -- prod'''
           }
