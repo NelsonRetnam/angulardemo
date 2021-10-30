@@ -15,7 +15,7 @@ pipeline {
         stage('Upload') {
           steps {
                 bat ''' ECHO Hello World  '''
-                sh "pwd"
+                sh 'pwd'
           }
         }
     }
