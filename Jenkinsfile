@@ -12,10 +12,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Upload') {
+        stage('Build') {
           steps {
-                bat ''' ECHO Hello World  '''
-                sh 'pwd'
+                sh 'npm install'
+                sh 'ng build --prod'
           }
         }
     }
