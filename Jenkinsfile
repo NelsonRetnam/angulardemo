@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
           steps {sh '''cd ${WORKSPACE}
                       npm install
-                      npm run ng build -- prod'''
+                      npm run ng build -- -- prod'''
           }
         }
     }
