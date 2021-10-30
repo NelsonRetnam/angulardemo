@@ -12,11 +12,9 @@ pipeline {
             }
         }
         stage('Build') {
-          steps {
-                sh 'pwd'
-                sh 'npm install'
-                sh 'npm -g install @angular/cli'
-                sh 'ng build --prod'
+          steps {sh '''cd ${WORKSPACE}
+                      npm install
+                      ng build — prod'''
           }
         }
     }
