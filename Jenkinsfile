@@ -1,12 +1,13 @@
 pipeline {
-    agent any
+  agent any
+  
+  tools { nodejs "nodejs" }
   
   environment {
-
-    PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Program Files\\Git\\bin"
-
+      PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Program Files\\Git\\bin"
   }
-    stages {
+    
+  stages {
         stage('Hello') {
             steps {
                 echo 'Hello World'
