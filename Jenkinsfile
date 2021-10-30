@@ -1,8 +1,6 @@
 pipeline {
   agent any
   
-  tools { nodejs "nodejs" }
-  
   environment {
       PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Program Files\\Git\\bin"
   }
@@ -15,6 +13,7 @@ pipeline {
         }
         stage('Build') {
           steps {
+                sh 'pwd'
                 sh 'npm install'
                 sh 'ng build --prod'
           }
