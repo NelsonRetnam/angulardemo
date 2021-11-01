@@ -15,7 +15,7 @@ pipeline {
           steps {sh '''
                       cd /c/users/asusn/.jenkins/workspace/angular2
                       pwd
-                      npm run ng build -- prod'''
+                      npm run ng build'''
           }
         }
     }
