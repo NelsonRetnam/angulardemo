@@ -13,7 +13,7 @@ pipeline {
                       npm run ng build'''
           }
         }
-        stage('Build') {
+        stage('Upload') {
           steps {
               s3Upload(bucket:"viacom123", path:'path/to/targetFolder/', includePathPattern:'**/*', workingDir:'dist', excludePathPattern:'**/*.svg,**/*.jpg')
           }
