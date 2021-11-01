@@ -6,11 +6,6 @@ pipeline {
   }
     
   stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
         stage('Build') {
           steps {sh '''
                       cd ${WORKSPACE}
@@ -18,5 +13,15 @@ pipeline {
                       npm run ng build'''
           }
         }
+        /*stage('Test') {
+          parallel {
+            stage('Static code analysis') {
+                steps { sh 'npm run-script lint' }
+            }
+            stage('Unit tests') {
+                steps { sh 'npm run-script test' }
+            }
+          }
+       }*/
     }
 }
