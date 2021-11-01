@@ -16,7 +16,7 @@ pipeline {
         stage('Upload') {
           steps {
               echo 'hello'
-              /*s3Upload(bucket:"viacom123", path:'path/to/targetFolder/', includePathPattern:'**/*', workingDir:'dist', excludePathPattern:'**/*.svg,**/*.jpg')*/
+              
           }
         }
         /*stage('Test') {
