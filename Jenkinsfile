@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
           steps {sh '''
-                      cd /c/users/asusn/.jenkins/workspace/angular2
+                      cd "{$WORKSPACE}"
                       pwd
                       npm run ng build'''
           }
