@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
           steps {sh '''cd ${WORKSPACE}
-                      npm cache clear --force
+                      pwd
                       ng run build -- prod'''
           }
         }
