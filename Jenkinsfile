@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
           steps {sh '''
-                      cd {$WORKSPACE}
+                      cd ${WORKSPACE}
                       pwd
                       npm run ng build'''
           }
