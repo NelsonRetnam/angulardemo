@@ -16,7 +16,10 @@ pipeline {
         stage('Upload') {
           steps {
               echo 'hello'
-              sh ''' pwd '''
+              sh '''
+              cd dist\ang-app
+              pwd 
+              ls '''
               s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'vote123', excludedFile: '/dist/ang-app/', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-2', showDirectlyInBrowser: false, sourceFile: '**/dist/ang-app/*.*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
               
           }
