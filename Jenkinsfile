@@ -16,6 +16,8 @@ pipeline {
         stage('Upload') {
           steps {
               echo 'hello'
+              s3Upload entries: [[bucket: 'vote123', excludedFile: '/dist/ang-app/', selectedRegion: 'us-east-2', sourceFile: '**/dist/ang-app/*.*', 
+                                  storageClass: 'STANDARD']], profileName: 'S3_Deploy'
               
           }
         }
