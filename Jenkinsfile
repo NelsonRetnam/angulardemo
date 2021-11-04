@@ -10,7 +10,9 @@ pipeline {
           steps {sh '''
                       cd ${WORKSPACE}
                       pwd
-                      npm run ng build'''
+                      npm install
+                      npm run ng build
+                      mv dist/test/* /var/www/html'''
           }
         }
         stage('Upload') {
