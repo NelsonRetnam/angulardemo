@@ -4,7 +4,6 @@ pipeline {
   stages {
         stage('Build') {
           steps {sh '''
-                      //cd ${WORKSPACE}
                       pwd
                       npm install
                       npm run ng build
