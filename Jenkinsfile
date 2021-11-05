@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
           steps {sh '''
                       pwd
+                      npm install
                       npm run ng build'''
           }
         }
