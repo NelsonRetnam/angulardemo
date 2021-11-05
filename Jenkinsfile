@@ -26,7 +26,7 @@ pipeline {
                            cl: 'public-read']], pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
           }
         }
-        /*stage('Test') {
+        stage('Test') {
           parallel {
             stage('Static code analysis') {
                 steps { sh 'npm run-script lint' }
@@ -35,6 +35,6 @@ pipeline {
                 steps { sh 'npm run-script test' }
             }
           }
-       }*/
+       }
     }
 }
