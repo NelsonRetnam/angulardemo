@@ -12,6 +12,17 @@ pipeline {
                       npm run ng build'''
           }
         }
+        stage('Test') {
+                // steps { sh 'npm run ng test --watch=false' }
+          parallel {
+            stage('Static code analysis') {
+                steps { sh 'echo "Static code analysis completed"' }
+            }
+            stage('Unit tests') {
+                steps { sh 'echo "Unit tests completed"' }
+            }
+          }
+        }
         stage('Upload') {
           steps {
               sh '''
@@ -24,17 +35,6 @@ pipeline {
                            managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-2', showDirectlyInBrowser: false, 
                            sourceFile: 'dist/ang-app/*.*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false, 
                            cl: 'public-read']], pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
-          }
-        }
-        stage('Test') {
-                // steps { sh 'npm run ng test --watch=false' }
-          parallel {
-            stage('Static code analysis') {
-                steps { sh 'echo "Static code analysis completed"' }
-            }
-            stage('Unit tests') {
-                steps { sh 'echo "Unit tests completed"' }
-            }
           }
         }
     }
