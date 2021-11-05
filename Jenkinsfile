@@ -27,7 +27,7 @@ pipeline {
           }
         }
         stage('Test') {
-                steps { sh 'ng test --watch=false' }
+                steps { sh 'npm run ng test --watch=false' }
           // parallel {
           //   stage('Static code analysis') {
           //       steps { sh 'npm run-script lint' }
