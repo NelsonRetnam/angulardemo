@@ -9,9 +9,9 @@ pipeline {
         stage('Build') {
           steps {sh '''
                       pwd
-                      npm install
+                      //npm install
                       npm run ng build
-                      mv dist/test/* /var/www/html'''
+                      //mv dist/test/* /var/www/html'''
           }
         }
         stage('Upload') {
