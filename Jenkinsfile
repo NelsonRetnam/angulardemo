@@ -1,6 +1,8 @@
 pipeline {
   agent any
   
+  tools {nodejs "NodeJS_Connect"} 
+  
   stages {
         stage('Build') {
           steps {sh '''
