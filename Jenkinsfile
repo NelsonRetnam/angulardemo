@@ -22,8 +22,8 @@ pipeline {
             s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, 
                 entries: [[bucket: 'viacom123', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, 
                            managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-2', showDirectlyInBrowser: false, 
-                           sourceFile: 'dist/ang-app/*.*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false, acl: 'public-read']], 
-                pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
+                           sourceFile: 'dist/ang-app/*.*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false, 
+                           cl: 'public-read']], pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
           }
         }
         /*stage('Test') {
