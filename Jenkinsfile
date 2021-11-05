@@ -9,12 +9,10 @@ pipeline {
         stage('Build') {
           steps {sh '''
                       pwd
-                      npm install
                       npm run ng build'''
           }
         }
         stage('Test') {
-                // steps { sh 'npm run ng test --watch=false' }
           parallel {
             stage('Static code analysis') {
                 steps { sh 'echo "Static code analysis completed"' }
