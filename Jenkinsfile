@@ -18,11 +18,9 @@ pipeline {
                   cd dist/ang-app/
                   pwd 
                   ls'''
-              s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, 
-                entries: [[bucket: 'viacom123', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, 
-                           managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-2', showDirectlyInBrowser: false, 
-                           sourceFile: 'dist/ang-app/*.*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], 
-                pluginFailureResultConstraint: 'FAILURE', profileName: 'S3_Deploy', userMetadata: []
+                     
+            def identity=awsIdentity();
+            s3Upload acl: 'PublicRead', bucket: 'viacom123', file: 'dist/ang-app/*.*', workingDir: '.'
           }
         }
         /*stage('Test') {
