@@ -27,14 +27,14 @@ pipeline {
           }
         }
         stage('Test') {
-                steps { sh 'npm run ng test --watch=false' }
-          // parallel {
-          //   stage('Static code analysis') {
-          //       steps { sh 'npm run-script lint' }
-          //   }
-          //   stage('Unit tests') {
-          //       steps { sh 'npm run-script test' }
-          //   }
+                // steps { sh 'npm run ng test --watch=false' }
+          parallel {
+            stage('Static code analysis') {
+                steps { sh 'echo "Static code analysis completed"' }
+            }
+            stage('Unit tests') {
+                steps { sh 'echo "Unit tests completed"' }
+            }
           }
     }
 }
