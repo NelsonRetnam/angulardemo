@@ -36,5 +36,6 @@ pipeline {
                 steps { sh 'echo "Unit tests completed"' }
             }
           }
+        }
     }
 }
